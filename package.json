@@ -1,0 +1,57 @@
+{
+  "name": "notion-lab-reports",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify:notion": "node scripts/verify-notion.mjs",
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build --webpack",
+    "start": "next start",
+    "check": "biome check .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit",
+    "render:fixture": "node --import tsx scripts/render-fixture.ts",
+    "fixture": "node scripts/create-fixture.mjs",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "setup:browser": "node scripts/install-browser.mjs",
+    "postinstall": "node scripts/prepare-assets.mjs",
+    "test:pdf": "node --import tsx --test tests/pdf.integration.ts"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/noto-emoji": "5.3.2",
+    "@fontsource/source-serif-4": "5.3.0",
+    "@puppeteer/browsers": "3.2.3",
+    "@sparticuz/chromium": "153.0.0",
+    "ipaddr.js": "2.5.0",
+    "katex": "0.18.9",
+    "lucide-react": "1.48.0",
+    "next": "16.3.6",
+    "notion-client": "8.0.8",
+    "notion-types": "8.0.8",
+    "notion-utils": "8.0.8",
+    "pdfjs-dist": "6.3.289",
+    "puppeteer-core": "25.12.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "0.35.5",
+    "shiki": "4.4.3",
+    "undici": "8.11.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.14",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/katex": "0.16.8",
+    "@types/node": "26.6.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**",
+      "!fixtures/*.json",
+      "!output",
+      "!.next",
+      "!public/vendor"
+    ]
+  },
+  "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2 },
+  "linter": { "enabled": true, "rules": { "preset": "recommended" } },
+  "css": { "parser": { "tailwindDirectives": true } },
+  "javascript": { "formatter": { "quoteStyle": "double" } }
+}
