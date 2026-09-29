@@ -76,7 +76,7 @@ export async function fetchPublicBytes(
         redirect: "manual",
         signal: requestSignal,
         headers: {
-          "User-Agent": "NotionLabs/0.1 (+public-page-report-renderer)",
+          "User-Agent": "NotionLabReports/0.1 (+public-page-report-renderer)",
         },
       });
       if ([301, 302, 303, 307, 308].includes(response.status)) {

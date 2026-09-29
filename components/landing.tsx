@@ -2,7 +2,6 @@
 
 import {
   ArrowRight,
-  FileText,
   Info,
   Link as LinkIcon,
   LoaderCircle,
@@ -11,6 +10,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { LabLogo } from "./lab-logo";
 import { useReport } from "./report-provider";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -79,20 +79,14 @@ export function Landing() {
     <div className="landing">
       <header className="app-header landing-header">
         <Link href="/" className="brand">
-          <span className="brand-mark">n</span>Notion Labs
+          <LabLogo className="brand-mark" size={38} />
+          Notion Lab Reports
         </Link>
         <ThemeToggle />
       </header>
       <main className="landing-main">
         <div className="landing-card">
-          <div className="document-symbol">
-            <FileText size={29} strokeWidth={1.4} />
-          </div>
-          <h1>
-            Your lab report,
-            <br />
-            ready to submit.
-          </h1>
+          <h1>Your lab reports in Notion.</h1>
           <p className="landing-description">
             Turn a published Notion page into a polished PDF, with a cover page
             and formatting that’s yours.
@@ -162,10 +156,6 @@ export function Landing() {
           No account. No API token. No stored documents.
         </p>
       </main>
-      <footer className="landing-footer">
-        <span>Made for the work behind the report.</span>
-        <span>Not affiliated with Notion</span>
-      </footer>
     </div>
   );
 }

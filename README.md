@@ -1,4 +1,4 @@
-# Notion Labs
+# Notion Lab Reports
 
 Turn a publicly published Notion page into a typeset lab report with a centered cover, real page breaks, and selectable text. Next.js App Router, TypeScript, Tailwind CSS, and Biome. No accounts or database; the report and settings stay in browser memory. The source URL is in the settings page URL, so reloading fetches it again. Reloading resets formatting preferences.
 
@@ -17,7 +17,7 @@ Open [localhost:3000](http://localhost:3000). The browser installer downloads an
 ## Publish your Notion page
 
 1. Open the page in Notion and choose **Share → Publish → Publish to web**.
-2. Copy its published `https://…notion.site/…` link and paste it into Notion Labs.
+2. Copy its published `https://…notion.site/…` link and paste it into Notion Lab Reports.
 3. Click **Parse**, adjust the report settings, and click **Export PDF**.
 
 Public `notion.so` and `notion.com` links also work. Private pages and workspace-only sharing do not. Short links without a page ID are resolved from the published page where possible; if Notion supplies no ID, the app asks for the full published link. Custom domains are not accepted.

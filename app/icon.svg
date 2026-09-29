@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>Notion Labs</title><rect width="32" height="32" rx="7" fill="#292a25"/><path d="M10 7h8l5 5v13H10z" fill="none" stroke="#faf9f6" stroke-width="1.6"/><path d="M18 7v6h5M13 17h7M13 21h7" fill="none" stroke="#faf9f6" stroke-width="1.5"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Notion Lab Reports — smiling flask</title>
+  <path d="M24 13v13L11 46c-3 5 0 11 6 11h29c6 0 9-6 6-11L39 26V13" fill="#fffdf6"/>
+  <path d="M19 34c6-4 13 4 22 0l11 17c-1 4-3 6-7 6H18c-5 0-8-5-6-9z" fill="#bce3c8"/>
+  <path d="M24 13v13L11 46c-3 5 0 11 6 11h29c6 0 9-6 6-11L39 26V13" stroke="#292d29" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="21" y="8" width="21" height="6" rx="3" fill="#fffdf6" stroke="#292d29" stroke-width="3"/>
+  <circle cx="24" cy="43" r="2" fill="#292d29"/>
+  <circle cx="39" cy="43" r="2" fill="#292d29"/>
+  <path d="M28 48q3.5 4 7 0" stroke="#292d29" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="31" cy="27" r="2.5" fill="#7db991"/>
+  <circle cx="13" cy="20" r="3.5" fill="#efd183" stroke="#292d29" stroke-width="2"/>
+  <path d="M51 12v8m-4-4h8" stroke="#7db991" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

@@ -6,7 +6,7 @@ import "@fontsource/inter/600.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Notion Labs — Reports, ready to submit",
+  title: "Notion Lab Reports — Reports, ready to submit",
   description:
     "Turn a published Notion page into a polished lab report with a dedicated cover page.",
 };

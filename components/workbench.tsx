@@ -18,6 +18,7 @@ import {
   safeFilename,
 } from "@/lib/settings";
 import type { ReportDocument } from "@/lib/types";
+import { LabLogo } from "./lab-logo";
 import { PdfPreview } from "./pdf-preview";
 import { useReport } from "./report-provider";
 import { ThemeToggle } from "./theme-toggle";
@@ -207,7 +208,8 @@ export function Workbench({ source }: { source: string }) {
     <div className="workbench">
       <header className="app-header">
         <Link href="/" className="brand">
-          <span className="brand-mark">n</span>Notion Labs
+          <LabLogo className="brand-mark" size={38} />
+          Notion Lab Reports
         </Link>
         <div className="header-right">
           <span className="header-caption">Your notes. Ready to submit.</span>
