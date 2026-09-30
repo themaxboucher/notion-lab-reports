@@ -1,0 +1,11 @@
+name: Task for Claude
+description: Describe a change and Claude will open a pull request for it.
+labels: ["claude"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What should change?
+      description: Describe the bug or feature. Include steps to reproduce, expected behavior, or relevant files if you know them.
+    validations:
+      required: true
