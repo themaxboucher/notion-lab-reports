@@ -8,6 +8,8 @@ import { renderDocumentHtml } from "./render/html";
 import { paperGeometry, type ReportSettings } from "./settings";
 import type { ReportDocument } from "./types";
 
+export class BrowserUnavailableError extends Error {}
+
 async function localChromium(): Promise<string> {
   if (process.env.CHROMIUM_EXECUTABLE_PATH)
     return process.env.CHROMIUM_EXECUTABLE_PATH;
@@ -53,7 +55,7 @@ async function localChromium(): Promise<string> {
       /* Try the next installed browser. */
     }
   }
-  throw new Error(
+  throw new BrowserUnavailableError(
     "Chromium is not installed. Run npm run setup:browser, or set CHROMIUM_EXECUTABLE_PATH.",
   );
 }
@@ -71,7 +73,11 @@ export async function renderPdf(
     executablePath: serverless
       ? await chromium.executablePath()
       : await localChromium(),
-    args: serverless ? chromium.args : [],
+    args: serverless
+      ? chromium.args
+      : process.env.CHROMIUM_NO_SANDBOX === "1"
+        ? ["--no-sandbox"]
+        : [],
     headless: "shell",
     defaultViewport: { width: 1200, height: 1000 },
     timeout: 25_000,
