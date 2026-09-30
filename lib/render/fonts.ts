@@ -80,5 +80,28 @@ async function loadFonts(): Promise<string> {
     /, url\(\.\/files\/[^)]+\.woff\) format\('woff'\)/g,
     "",
   );
-  return fonts.join("\n") + katexCss + emojiCss;
+  // Inter and Source Serif only ship the latin subset, which lacks arrows and math symbols.
+  const symbolsDirectory = path.join(
+    process.cwd(),
+    "node_modules/@fontsource/noto-sans-symbols-2",
+  );
+  const symbolBlocks = (
+    await readFile(path.join(symbolsDirectory, "400.css"), "utf8")
+  )
+    .split("@font-face")
+    .filter((block) => /-(?:symbols|math)-400-normal\.woff2/.test(block));
+  let symbolsCss = "";
+  for (const block of symbolBlocks) {
+    const url = block.match(/url\(\.\/(files\/[^)]+\.woff2)\)/)?.[1];
+    if (!url) continue;
+    const bytes = await readFile(path.join(symbolsDirectory, url));
+    symbolsCss += `@font-face${block
+      .replace(
+        `url(./${url})`,
+        `url(data:font/woff2;base64,${bytes.toString("base64")})`,
+      )
+      .replace(/, url\([^)]+\.woff\) format\('woff'\)/, "")
+      .replace(/font-display:\s*swap/, "font-display: block")}`;
+  }
+  return fonts.join("\n") + katexCss + emojiCss + symbolsCss;
 }

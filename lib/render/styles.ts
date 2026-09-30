@@ -12,7 +12,7 @@ export const blockStyles = `
 .report blockquote{margin:1em 0;border-left:2px solid #a4a29d;padding:.15em 1.1em;color:#57544f}
 .report figure{margin:1.2em 0}.report img{max-width:100%;height:auto;object-fit:contain}
 .report figure>img{display:block;margin:auto;max-height:7in}.report figcaption{font-size:9pt;color:#77746d;margin-top:.5em;text-align:center;break-before:avoid}
-.report code{font-family:"Report Mono",monospace;font-size:.82em;background:#f2f1ee;border-radius:3px;padding:.13em .3em}
+.report code{font-family:"Report Mono","Noto Sans Symbols 2",monospace;font-size:.82em;background:#f2f1ee;border-radius:3px;padding:.13em .3em}
 .report pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;margin:0;padding:14px 16px;line-height:1.55}
 .report pre code{white-space:pre-wrap;font-size:8.5pt;background:transparent;padding:0;word-break:break-word}
 .report table{width:100%;border-collapse:collapse;font-size:.9em;margin:1em 0;table-layout:fixed}
@@ -36,9 +36,9 @@ function cssString(value: string): string {
 export function printStyles(settings: ReportSettings): string {
   const { width, height, margin } = paperGeometry(settings);
   const font = {
-    serif: '"Report Serif",Georgia,serif',
-    sans: '"Report Sans",Arial,sans-serif',
-    system: "Arial,Helvetica,sans-serif",
+    serif: '"Report Serif","Noto Sans Symbols 2",Georgia,serif',
+    sans: '"Report Sans","Noto Sans Symbols 2",Arial,sans-serif',
+    system: 'Arial,Helvetica,"Noto Sans Symbols 2",sans-serif',
   }[settings.font];
   const center =
     settings.pageNumbers && settings.pageNumberPosition === "center"
