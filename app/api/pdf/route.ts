@@ -1,4 +1,4 @@
-import { BrowserUnavailableError, renderPdf } from "@/lib/pdf";
+import { renderPdf } from "@/lib/pdf";
 import { InputError, readJsonBody, validateDocument } from "@/lib/request";
 import { safeFilename, validateSettings } from "@/lib/settings";
 
@@ -37,8 +37,7 @@ export async function POST(request: Request) {
     return Response.json(
       {
         error:
-          error instanceof InputError ||
-          error instanceof BrowserUnavailableError
+          error instanceof InputError
             ? error.message
             : "The PDF could not be rendered. Try again, or check that Chromium is installed on the server.",
       },
