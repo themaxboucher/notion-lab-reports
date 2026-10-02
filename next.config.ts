@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
       "./node_modules/@fontsource/*/files/*-latin-*.woff2",
       "./node_modules/@fontsource/noto-emoji/400.css",
       "./node_modules/@fontsource/noto-emoji/files/*-400-normal.woff2",
+      "./node_modules/@fontsource/noto-sans-symbols-2/400.css",
+      "./node_modules/@fontsource/noto-sans-symbols-2/files/*-{symbols,math}-400-normal.woff2",
       "./node_modules/katex/dist/katex.min.css",
       "./node_modules/katex/dist/fonts/*.woff2",
     ],
